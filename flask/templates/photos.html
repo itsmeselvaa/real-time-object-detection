@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Photo</title>
+    <style>
+        body{
+            background-image:url("../static/images/Object-detection-Real-world-.png");
+            background-size:100%;
+            background-position:center;
+            color:white;
+            margin:0px;
+            padding:0px;
+        }
+
+        header.feature-box.second{
+        color:white;
+        text-align:left;
+
+        }
+
+        ul{
+        list-style:none;
+        padding:0px;}
+        li{
+        display:inline-block;
+        background-color:white;
+        border-radius:10px;
+        padding:10px;
+        margin:10px;
+        }
+        li:hover{
+        background-color:yellow;
+        margin:10px;
+        }
+        header a{
+        color:black;
+        text-decoration:none;
+        width:100%;
+        }
+        header.feature-box.below{
+        background-color:#0F70B1;
+        margin-top:-100px;
+        text-align:center;
+        height:80px;
+        padding:10px
+
+
+        }
+        .features{
+          background-color:white;
+          width: 900px;
+          height: 700px;
+          border-radius: 35px;
+          object-fit: contain;
+          margin:20px;
+        }
+        section.col-sm{
+          background-color:black;
+          width: 1000px;
+          height: 650px;
+          border-radius: 35px;
+          object-fit: contain;
+          margin:40px;
+        }
+
+        img{
+          width: 900px;
+          height: 600px;
+          border-radius: 35px;
+          object-fit: contain;
+          margin:40px;
+        }
+
+        .new{
+        color:black;
+        margin:0px;
+        padding:10px;
+        background-color:#0F70B1;
+        margin:0px;
+        margin-top:-10px;
+        }
+
+
+    </style>
+</head>
+<body>
+<header class="feature-box second">
+        <nav>
+        <ul>
+            <li><a href="home">Home</a>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+<header class="feature-box below">
+     <h1><strong>Output Photo</strong></h1>
+</header>
+
+  <section class="col-sm " >
+          <img src="{{ url_for('photo') }}"   alt="Upload photo">
+
+  </section>
+<section>
+    <div class="new" >
+      <form method = 'POST' enctype="multipart/form-data" style="align-content: center; text-align: center;display: flex;">
+        {{form.hidden_tag()}}
+        {{form.file(class_="custom-file-input")}}
+
+        <div>
+        <button type="submit" name="favorite" value="x" class="btnCustom">
+            Submit
+        </button>
+      </div>
+      </form>
+    </div>
+
+  </div>
+    </section>
+
+</body>
+</html>
